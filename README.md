@@ -1,5 +1,3 @@
-# handymeasures[index.html](https://github.com/user-attachments/files/33286224/index.html)
-<!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
