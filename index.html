@@ -11,21 +11,21 @@
 <style>
 /* Layout: one narrow column, phone first. Header with a ruler strip, a four-step progress row, one card per step, results as paired bars on a shared scale. */
 :root{
-  --bg:#EEF3F7;
+  --bg:#F0F4F5;
   --surface:#FFFFFF;
-  --fg:#14202E;
-  --muted:#4A5A6C;
+  --fg:#212B32;
+  --muted:#425563;
   --line:#D3DCE6;
-  --head-bg:#0E2A47;
+  --head-bg:#005EB8;
   --head-fg:#FFFFFF;
-  --head-sub:#C9D8E8;
-  --accent:#0B5C57;
-  --accent-soft:#E3F1EF;
-  --warm:#C2452D;
-  --warm-soft:#FBEAE5;
-  --before:#E8836A;
-  --after:#0B5C57;
-  --btn-bg:#0E2A47;
+  --head-sub:#D6E6F5;
+  --accent:#007F3B;
+  --accent-soft:#E3F2E8;
+  --warm:#A35F00;
+  --warm-soft:#FDF0DA;
+  --before:#ED8B00;
+  --after:#007F3B;
+  --btn-bg:#005EB8;
   --btn-fg:#FFFFFF;
   --track:#D7E1EA;
   --display:'Source Serif 4',Georgia,serif;
@@ -34,17 +34,17 @@
 @media (prefers-color-scheme: dark){
   :root:not([data-theme="light"]){
     --bg:#0A1624;--surface:#11243A;--fg:#EAF0F6;--muted:#A9B9CA;--line:#27415C;
-    --head-bg:#0E2A47;--head-fg:#FFFFFF;--head-sub:#C9D8E8;
-    --accent:#5FC4BB;--accent-soft:#12353A;--warm:#FF9D80;--warm-soft:#3A2420;
-    --before:#E8836A;--after:#4DB6AC;--btn-bg:#E8836A;--btn-fg:#14202E;--track:#2B4560;
+    --head-bg:#005EB8;--head-fg:#FFFFFF;--head-sub:#D6E6F5;
+    --accent:#4CC17A;--accent-soft:#12301E;--warm:#F5B041;--warm-soft:#3A2A10;
+    --before:#ED8B00;--after:#3DAE6A;--btn-bg:#ED8B00;--btn-fg:#212B32;--track:#2B4560;
     color-scheme:dark;
   }
 }
 :root[data-theme="dark"]{
   --bg:#0A1624;--surface:#11243A;--fg:#EAF0F6;--muted:#A9B9CA;--line:#27415C;
-  --head-bg:#0E2A47;--head-fg:#FFFFFF;--head-sub:#C9D8E8;
-  --accent:#5FC4BB;--accent-soft:#12353A;--warm:#FF9D80;--warm-soft:#3A2420;
-  --before:#E8836A;--after:#4DB6AC;--btn-bg:#E8836A;--btn-fg:#14202E;--track:#2B4560;
+  --head-bg:#005EB8;--head-fg:#FFFFFF;--head-sub:#D6E6F5;
+  --accent:#4CC17A;--accent-soft:#12301E;--warm:#F5B041;--warm-soft:#3A2A10;
+  --before:#ED8B00;--after:#3DAE6A;--btn-bg:#ED8B00;--btn-fg:#212B32;--track:#2B4560;
   color-scheme:dark;
 }
 *{box-sizing:border-box}
@@ -55,7 +55,7 @@ header .in{max-width:640px;margin-inline:auto;display:flex;flex-direction:column
 .eyebrow{font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--head-sub)}
 h1{margin:0;font-family:var(--display);font-weight:700;font-size:40px;line-height:1.08;text-wrap:balance}
 header p{margin:0;color:var(--head-sub);max-width:34em}
-.ruler{height:20px;background-image:repeating-linear-gradient(90deg,#9FB6CC 0,#9FB6CC 2px,transparent 2px,transparent 12px),repeating-linear-gradient(90deg,#FF9D80 0,#FF9D80 3px,transparent 3px,transparent 60px);background-size:100% 10px,100% 20px;background-repeat:no-repeat;background-position:0 100%,0 100%}
+.ruler{height:20px;background-image:repeating-linear-gradient(90deg,#9FB6CC 0,#9FB6CC 2px,transparent 2px,transparent 12px),repeating-linear-gradient(90deg,#F5B041 0,#F5B041 3px,transparent 3px,transparent 60px);background-size:100% 10px,100% 20px;background-repeat:no-repeat;background-position:0 100%,0 100%}
 .steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin:0;padding:0;list-style:none}
 .steps li{display:flex;flex-direction:column;gap:6px;font-size:13px;font-weight:600;letter-spacing:.04em;color:var(--muted)}
 .steps li::before{content:"";height:6px;border-radius:3px;background:var(--track)}
@@ -156,7 +156,7 @@ button.ghost{background:transparent;color:var(--fg);border:2px solid var(--line)
         <rect x="262" y="44" width="50" height="86" rx="25"/>
         <rect x="64" y="96" width="254" height="62" rx="26"/>
       </g>
-      <path d="M70 172 V184 H312 V172" fill="none" stroke="#0B5C57" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M70 172 V184 H312 V172" fill="none" stroke="#007F3B" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
     </svg>
     <div class="fw">
       <div class="fw-top"><label for="fw">Four-finger width</label><output id="fwo" for="fw">7.0 cm</output></div>
