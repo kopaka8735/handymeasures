@@ -130,17 +130,6 @@ button.ghost{background:transparent;color:var(--fg);border:2px solid var(--line)
   <section class="card" id="s1">
     <h2>Estimate by eye</h2>
     <p class="lead">Look at wounds 1 to 5 on the A4 sheets beside the poster. For each one, slide to the length you think it is. Do not use a ruler.</p>
-    <fieldset class="conf">
-      <legend>How confident are you at judging wound length?</legend>
-      <div class="pills" role="radiogroup">
-        <input type="radio" name="conf" id="c1" value="1"><label for="c1">1</label>
-        <input type="radio" name="conf" id="c2" value="2"><label for="c2">2</label>
-        <input type="radio" name="conf" id="c3" value="3"><label for="c3">3</label>
-        <input type="radio" name="conf" id="c4" value="4"><label for="c4">4</label>
-        <input type="radio" name="conf" id="c5" value="5"><label for="c5">5</label>
-      </div>
-      <div class="pill-ends"><span>Not confident</span><span>Very confident</span></div>
-    </fieldset>
     <div id="list1"></div>
     <button type="button" id="to2">Next: measure your hand</button>
   </section>
@@ -184,7 +173,6 @@ button.ghost{background:transparent;color:var(--fg);border:2px solid var(--line)
     <div class="legend"><span><i style="background:var(--before)"></i>By eye</span><span><i style="background:var(--after)"></i>With your hand</span></div>
     <div id="rows"></div>
     <p class="study">In the study of 70 clinicians, the median total error fell from 6.60 cm to 2.95 cm, a 55.3% reduction. 60 of 70 improved.</p>
-    <p class="note" id="confnote" hidden></p>
     <div class="row2"><button type="button" id="again" class="ghost">Start again</button></div>
   </section>
 
@@ -281,16 +269,10 @@ button.ghost{background:transparent;color:var(--fg);border:2px solid var(--line)
         '<div class="bar-row"><span class="tag">By eye</span><div class="bar"><i style="width:'+p1+'%;background:var(--before)"></i></div><span class="val">You said '+f1(g1[i])+' cm, '+signed(g1[i]-t)+'</span></div>'+
         '<div class="bar-row"><span class="tag">Hand</span><div class="bar"><i style="width:'+p2+'%;background:var(--after)"></i></div><span class="val">You said '+f1(g2[i])+' cm, '+signed(g2[i]-t)+'</span></div></div>';
     }).join('');
-    var c=document.querySelector('input[name="conf"]:checked'), note=$('confnote');
-    if(c){
-      note.hidden=false;
-      note.textContent='You rated your confidence '+c.value+' out of 5 before starting. In the study, neither seniority nor confidence predicted accuracy (confidence vs error: ρ = −0.12).';
-    }else{note.hidden=true}
     go(4);
   }
   function init(){
     build1(); buildFW(); build3();
-    var r=document.querySelector('input[name="conf"]:checked'); if(r){r.checked=false}
     refresh3(); go(1);
   }
   $('to2').addEventListener('click',function(){go(2)});
