@@ -1,9 +1,4 @@
-<!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<style>:root{color-scheme:light}body{margin:0}[hidden]{display:none!important}</style>
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
 <title>Handy Measurements Test</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,21 +6,21 @@
 <style>
 /* Layout: one narrow column, phone first. Header with a ruler strip, a four-step progress row, one card per step, results as paired bars on a shared scale. */
 :root{
-  --bg:#F0F4F5;
+  --bg:#EEF3F7;
   --surface:#FFFFFF;
-  --fg:#212B32;
-  --muted:#425563;
+  --fg:#14202E;
+  --muted:#4A5A6C;
   --line:#D3DCE6;
-  --head-bg:#005EB8;
+  --head-bg:#0E2A47;
   --head-fg:#FFFFFF;
-  --head-sub:#D6E6F5;
-  --accent:#007F3B;
-  --accent-soft:#E3F2E8;
-  --warm:#A35F00;
-  --warm-soft:#FDF0DA;
-  --before:#ED8B00;
-  --after:#007F3B;
-  --btn-bg:#005EB8;
+  --head-sub:#C9D8E8;
+  --accent:#0B5C57;
+  --accent-soft:#E3F1EF;
+  --warm:#C2452D;
+  --warm-soft:#FBEAE5;
+  --before:#E8836A;
+  --after:#0B5C57;
+  --btn-bg:#0E2A47;
   --btn-fg:#FFFFFF;
   --track:#D7E1EA;
   --display:'Source Serif 4',Georgia,serif;
@@ -34,17 +29,17 @@
 @media (prefers-color-scheme: dark){
   :root:not([data-theme="light"]){
     --bg:#0A1624;--surface:#11243A;--fg:#EAF0F6;--muted:#A9B9CA;--line:#27415C;
-    --head-bg:#005EB8;--head-fg:#FFFFFF;--head-sub:#D6E6F5;
-    --accent:#4CC17A;--accent-soft:#12301E;--warm:#F5B041;--warm-soft:#3A2A10;
-    --before:#ED8B00;--after:#3DAE6A;--btn-bg:#ED8B00;--btn-fg:#212B32;--track:#2B4560;
+    --head-bg:#0E2A47;--head-fg:#FFFFFF;--head-sub:#C9D8E8;
+    --accent:#5FC4BB;--accent-soft:#12353A;--warm:#FF9D80;--warm-soft:#3A2420;
+    --before:#E8836A;--after:#4DB6AC;--btn-bg:#E8836A;--btn-fg:#14202E;--track:#2B4560;
     color-scheme:dark;
   }
 }
 :root[data-theme="dark"]{
   --bg:#0A1624;--surface:#11243A;--fg:#EAF0F6;--muted:#A9B9CA;--line:#27415C;
-  --head-bg:#005EB8;--head-fg:#FFFFFF;--head-sub:#D6E6F5;
-  --accent:#4CC17A;--accent-soft:#12301E;--warm:#F5B041;--warm-soft:#3A2A10;
-  --before:#ED8B00;--after:#3DAE6A;--btn-bg:#ED8B00;--btn-fg:#212B32;--track:#2B4560;
+  --head-bg:#0E2A47;--head-fg:#FFFFFF;--head-sub:#C9D8E8;
+  --accent:#5FC4BB;--accent-soft:#12353A;--warm:#FF9D80;--warm-soft:#3A2420;
+  --before:#E8836A;--after:#4DB6AC;--btn-bg:#E8836A;--btn-fg:#14202E;--track:#2B4560;
   color-scheme:dark;
 }
 *{box-sizing:border-box}
@@ -55,7 +50,7 @@ header .in{max-width:640px;margin-inline:auto;display:flex;flex-direction:column
 .eyebrow{font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--head-sub)}
 h1{margin:0;font-family:var(--display);font-weight:700;font-size:40px;line-height:1.08;text-wrap:balance}
 header p{margin:0;color:var(--head-sub);max-width:34em}
-.ruler{height:20px;background-image:repeating-linear-gradient(90deg,#9FB6CC 0,#9FB6CC 2px,transparent 2px,transparent 12px),repeating-linear-gradient(90deg,#F5B041 0,#F5B041 3px,transparent 3px,transparent 60px);background-size:100% 10px,100% 20px;background-repeat:no-repeat;background-position:0 100%,0 100%}
+.ruler{height:20px;background-image:repeating-linear-gradient(90deg,#9FB6CC 0,#9FB6CC 2px,transparent 2px,transparent 12px),repeating-linear-gradient(90deg,#FF9D80 0,#FF9D80 3px,transparent 3px,transparent 60px);background-size:100% 10px,100% 20px;background-repeat:no-repeat;background-position:0 100%,0 100%}
 .steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin:0;padding:0;list-style:none}
 .steps li{display:flex;flex-direction:column;gap:6px;font-size:13px;font-weight:600;letter-spacing:.04em;color:var(--muted)}
 .steps li::before{content:"";height:6px;border-radius:3px;background:var(--track)}
@@ -86,6 +81,13 @@ button.ghost{background:transparent;color:var(--fg);border:2px solid var(--line)
 .fw{display:flex;flex-direction:column;gap:8px;background:var(--accent-soft);border-radius:12px;padding:16px}
 .fw-top{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
 .fw-top label{font-weight:700}
+.fw+.fw{margin-top:0}
+#fwlist{display:flex;flex-direction:column;gap:12px}
+.ref{position:sticky;top:8px;z-index:2;background:var(--accent-soft);border:1px solid var(--line);border-radius:12px;padding:12px 14px;display:flex;flex-direction:column;gap:8px}
+.ref-title{font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.ref-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
+.ref-grid div{display:flex;flex-direction:column;align-items:center;gap:2px;font-size:13px;color:var(--muted)}
+.ref-grid b{font-size:20px;color:var(--accent);font-variant-numeric:tabular-nums}
 .hand{display:block;width:100%;max-width:340px;height:auto;margin-inline:auto}
 .big{display:flex;flex-direction:column;gap:6px;background:var(--accent-soft);border-radius:12px;padding:18px}
 .big .nums{font-family:var(--display);font-weight:700;font-size:44px;line-height:1.05;font-variant-numeric:tabular-nums;color:var(--accent);text-wrap:balance}
@@ -111,8 +113,6 @@ button.ghost{background:transparent;color:var(--fg);border:2px solid var(--line)
 @media (prefers-reduced-motion: no-preference){.card{animation:rise .25s ease-out}@keyframes rise{from{opacity:.4;transform:translateY(6px)}to{opacity:1;transform:none}}}
 </style>
 
-</head>
-<body>
 <header>
   <div class="in">
     <div class="eyebrow">Handy Measurements · Companion to the poster</div>
@@ -147,7 +147,7 @@ button.ghost{background:transparent;color:var(--fg);border:2px solid var(--line)
 
   <section class="card" id="s2" hidden>
     <h2>Measure your hand</h2>
-    <p class="lead">Press your index, middle, ring and little fingers together. Measure across all four, at the widest part, with a ruler. You only need to do this once.</p>
+    <p class="lead">Press your fingers together. With a ruler, measure across one finger, then two, three and four, at the widest part. Slide each one to your measurement. You only need to do this once.</p>
     <svg class="hand" viewBox="0 0 400 190" role="img" aria-label="Four fingers held together with a bracket showing their combined width">
       <g fill="#EBC3A5" stroke="#B98A6A" stroke-width="5" stroke-linejoin="round">
         <rect x="70" y="26" width="50" height="104" rx="25"/>
@@ -156,20 +156,20 @@ button.ghost{background:transparent;color:var(--fg);border:2px solid var(--line)
         <rect x="262" y="44" width="50" height="86" rx="25"/>
         <rect x="64" y="96" width="254" height="62" rx="26"/>
       </g>
-      <path d="M70 172 V184 H312 V172" fill="none" stroke="#007F3B" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M70 172 V184 H312 V172" fill="none" stroke="#0B5C57" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
     </svg>
-    <div class="fw">
-      <div class="fw-top"><label for="fw">Four-finger width</label><output id="fwo" for="fw">7.0 cm</output></div>
-      <input type="range" id="fw" min="4" max="10" step="0.1" value="7">
-      <div class="scale"><span>4</span><span>6</span><span>8</span><span>10 cm</span></div>
-    </div>
+    <div id="fwlist"></div>
     <p class="hint">Rulers are hard to find in most clinical areas. In the study, 58.6% of staff rated ruler access as hard. Your hand is always with you.</p>
     <button type="button" id="to3">Next: estimate again</button>
   </section>
 
   <section class="card" id="s3" hidden>
     <h2>Estimate with your hand</h2>
-    <p class="lead">Look at the same five wounds. This time, hold your four fingers against each one and count how many hand-widths long it is. Slide to your count.</p>
+    <p class="lead">Look at the same five wounds. This time, hold your measured fingers against each one and estimate the length again.</p>
+    <div class="ref" aria-label="Your finger widths">
+      <div class="ref-title">Your finger widths</div>
+      <div class="ref-grid" id="refgrid"></div>
+    </div>
     <div id="list3"></div>
     <button type="button" id="to4">See my result</button>
   </section>
@@ -209,22 +209,39 @@ button.ghost{background:transparent;color:var(--fg);border:2px solid var(--line)
       $('e'+n).addEventListener('input',function(){$('o'+n).textContent=f1(parseFloat(this.value))+' cm'});
     });
   }
-  function fw(){return parseFloat($('fw').value)}
-  function refresh3(){
-    TRUE.forEach(function(_,i){
-      var n=i+1, w=parseFloat($('h'+n).value);
-      $('p'+n).textContent=w.toFixed(2)+' hands = '+f1(w*fw())+' cm';
+  var FW=[
+    {n:1,label:'1 finger',min:0.5,max:3.5,def:1.8},
+    {n:2,label:'2 fingers',min:1,max:7,def:3.6},
+    {n:3,label:'3 fingers',min:2,max:10,def:5.4},
+    {n:4,label:'4 fingers',min:3,max:13,def:7.2}
+  ];
+  function fwv(n){return parseFloat($('fw'+n).value)}
+  function buildFW(){
+    $('fwlist').innerHTML=FW.map(function(d){
+      var mid=Math.round((d.min+d.max)/2);
+      return '<div class="fw"><div class="fw-top"><label for="fw'+d.n+'">'+d.label+' width</label><output id="fwo'+d.n+'" for="fw'+d.n+'">'+f1(d.def)+' cm</output></div>'+
+        '<input type="range" id="fw'+d.n+'" min="'+d.min+'" max="'+d.max+'" step="0.1" value="'+d.def+'">'+
+        '<div class="scale"><span>'+d.min+'</span><span>'+mid+'</span><span>'+d.max+' cm</span></div></div>';
+    }).join('');
+    FW.forEach(function(d){
+      $('fw'+d.n).addEventListener('input',function(){$('fwo'+d.n).textContent=f1(fwv(d.n))+' cm'});
     });
+  }
+  function refresh3(){
+    $('refgrid').innerHTML=FW.map(function(d){
+      return '<div><b>'+f1(fwv(d.n))+' cm</b><span>'+d.label+'</span></div>';
+    }).join('');
   }
   function build3(){
     $('list3').innerHTML=TRUE.map(function(_,i){
       var n=i+1;
-      return '<div class="wound"><div class="wound-top"><label for="h'+n+'">Wound '+n+'</label><output id="p'+n+'" for="h'+n+'"></output></div>'+
-        '<input type="range" id="h'+n+'" min="0" max="4" step="0.05" value="1">'+
-        '<div class="scale"><span>0</span><span>1</span><span>2</span><span>3</span><span>4 hands</span></div></div>';
+      return '<div class="wound"><div class="wound-top"><label for="h'+n+'">Wound '+n+'</label><output id="p'+n+'" for="h'+n+'">5.0 cm</output></div>'+
+        '<input type="range" id="h'+n+'" min="0" max="20" step="0.1" value="5">'+
+        '<div class="scale"><span>0</span><span>5</span><span>10</span><span>15</span><span>20 cm</span></div></div>';
     }).join('');
     TRUE.forEach(function(_,i){
-      $('h'+(i+1)).addEventListener('input',refresh3);
+      var n=i+1;
+      $('h'+n).addEventListener('input',function(){$('p'+n).textContent=f1(parseFloat(this.value))+' cm'});
     });
   }
   function go(n){
@@ -241,9 +258,9 @@ button.ghost{background:transparent;color:var(--fg);border:2px solid var(--line)
     return 'spot on';
   }
   function result(){
-    var w=fw(), e1=[], e2=[], g1=[], g2=[];
+    var e1=[], e2=[], g1=[], g2=[];
     TRUE.forEach(function(t,i){
-      var a=parseFloat($('e'+(i+1)).value), b=parseFloat($('h'+(i+1)).value)*w;
+      var a=parseFloat($('e'+(i+1)).value), b=parseFloat($('h'+(i+1)).value);
       g1.push(a); g2.push(b); e1.push(Math.abs(a-t)); e2.push(Math.abs(b-t));
     });
     var s1=e1.reduce(function(a,b){return a+b},0), s2=e2.reduce(function(a,b){return a+b},0);
@@ -272,12 +289,10 @@ button.ghost{background:transparent;color:var(--fg);border:2px solid var(--line)
     go(4);
   }
   function init(){
-    build1(); build3();
+    build1(); buildFW(); build3();
     var r=document.querySelector('input[name="conf"]:checked'); if(r){r.checked=false}
-    $('fw').value=7; $('fwo').textContent='7.0 cm';
     refresh3(); go(1);
   }
-  $('fw').addEventListener('input',function(){$('fwo').textContent=f1(fw())+' cm'});
   $('to2').addEventListener('click',function(){go(2)});
   $('to3').addEventListener('click',function(){refresh3();go(3)});
   $('to4').addEventListener('click',result);
@@ -286,5 +301,4 @@ button.ghost{background:transparent;color:var(--fg);border:2px solid var(--line)
 })();
 </script>
 
-</body>
-</html>
+</body></html>
